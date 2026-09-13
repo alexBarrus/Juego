@@ -18,8 +18,6 @@ public abstract class Personaje {
     public Personaje() {
     }
 
-    
-    
     public Personaje(String Tipo, String Nombre, int Vida, int nivel, int daño, int defensa, boolean EstaVivo) {
         this.Tipo = Tipo;
         this.Nombre = Nombre;
@@ -113,13 +111,16 @@ public abstract class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje{" + "Tipo=" + Tipo + ", Nombre=" + Nombre + ", Vida=" + Vida + ", nivel=" + nivel + ", da\u00f1o=" + daño + ", defensa=" + defensa + ", EstaVivo=" + EstaVivo + '}';
+        return "Personaje{" + "Tipo=" + Tipo + ", Nombre=" + Nombre + ", Vida=" + Vida + ", nivel=" + nivel + ", daño=" + daño + ", defensa=" + defensa + ", EstaVivo=" + EstaVivo + '}';
     }
 
-    
+    public abstract String realizarAccion();
 
-    
-    
-    
-    
+    public int calcularPoderAtaque() {
+        return daño + defensa / 2;
+    }
+
+    public String obtenerEstado() {
+        return EstaVivo ? "Vivo" : "Derrotado";
+    }
 }

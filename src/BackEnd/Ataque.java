@@ -26,4 +26,19 @@ public class Ataque extends Habilidad {
     public String toString() {
         return super.toString() + " \nAtaque{dañoExtra=" + dañoExtra + "}";
     }
+
+    @Override
+    public String ejecutar() {
+        return "La habilidad " + getNombre() + " inflige daño extra al enemigo.";
+    }
+
+    @Override
+    public int calcularEfecto() {
+        return getPoder() + dañoExtra;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Ofensiva";
+    }
 }

@@ -36,8 +36,19 @@ public class Enemigo extends Personaje{
     public String toString() {
         return super.toString()+ " \nEnemigo{" + "DistanciaDeteccion=" + DistanciaDeteccion + ", RecompensaXP=" + RecompensaXP + '}';
     }
-    
-    
-    
-    
+
+    @Override
+    public String realizarAccion() {
+        return "El enemigo " + getNombre() + " acecha dentro de un radio de " + DistanciaDeteccion + " unidades.";
+    }
+
+    @Override
+    public int calcularPoderAtaque() {
+        return getDaño() + (RecompensaXP / 20);
+    }
+
+    @Override
+    public String obtenerEstado() {
+        return "Detección: " + DistanciaDeteccion + ", Recompensa: " + RecompensaXP + (isEstaVivo() ? " - Al acecho" : " - Eliminado");
+    }
 }

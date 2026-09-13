@@ -4,33 +4,14 @@
 package BackEnd;
 
 public class Arco extends Armas{
-    private String nombre;
-    private int daño;
     private float alcance;
 
     public Arco() {
     }
 
-    public Arco(String nombre, int daño, float alcance) {
-        this.nombre = nombre;
-        this.daño = daño;
+    public Arco(String nombre, int daño, int durabilidad, float alcance) {
+        super(nombre, daño, durabilidad);
         this.alcance = alcance;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getDaño() {
-        return daño;
-    }
-
-    public void setDaño(int daño) {
-        this.daño = daño;
     }
 
     public float getAlcance() {
@@ -43,6 +24,21 @@ public class Arco extends Armas{
 
     @Override
     public String toString() {
-        return "Arco{nombre=" + nombre + ", daño=" + daño + ", alcance=" + alcance + "}";
+        return super.toString() + " \nArco{alcance=" + alcance + "}";
+    }
+
+    @Override
+    public String ejecutar() {
+        return "El arco " + getNombre() + " dispara una flecha a " + alcance + " metros de distancia.";
+    }
+
+    @Override
+    public int calcularValorCombate() {
+        return getDaño() + (int) (alcance / 10);
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Arma a distancia";
     }
 }

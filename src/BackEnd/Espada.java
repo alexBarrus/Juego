@@ -4,33 +4,14 @@
 package BackEnd;
 
 public class Espada extends Armas{
-    private String nombre;
-    private int daño;
     private float filo;
 
     public Espada() {
     }
 
-    public Espada(String nombre, int daño, float filo) {
-        this.nombre = nombre;
-        this.daño = daño;
+    public Espada(String nombre, int daño, int durabilidad, float filo) {
+        super(nombre, daño, durabilidad);
         this.filo = filo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getDaño() {
-        return daño;
-    }
-
-    public void setDaño(int daño) {
-        this.daño = daño;
     }
 
     public float getFilo() {
@@ -43,6 +24,21 @@ public class Espada extends Armas{
 
     @Override
     public String toString() {
-        return "Espada{nombre=" + nombre + ", daño=" + daño + ", filo=" + filo + "}";
+        return super.toString() + " \nEspada{filo=" + filo + "}";
+    }
+
+    @Override
+    public String ejecutar() {
+        return "La espada " + getNombre() + " realiza un corte cuerpo a cuerpo con filo " + filo + ".";
+    }
+
+    @Override
+    public int calcularValorCombate() {
+        return getDaño() + (int) (filo * 2);
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Arma cuerpo a cuerpo";
     }
 }

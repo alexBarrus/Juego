@@ -4,25 +4,14 @@
 package BackEnd;
 
 public class Escudo extends Armas{
-    private String nombre;
     private int defensaExtra;
-    private int durabilidad;
 
     public Escudo() {
     }
 
     public Escudo(String nombre, int defensaExtra, int durabilidad) {
-        this.nombre = nombre;
+        super(nombre, 0, durabilidad);
         this.defensaExtra = defensaExtra;
-        this.durabilidad = durabilidad;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public int getDefensaExtra() {
@@ -33,16 +22,23 @@ public class Escudo extends Armas{
         this.defensaExtra = defensaExtra;
     }
 
-    public int getDurabilidad() {
-        return durabilidad;
-    }
-
-    public void setDurabilidad(int durabilidad) {
-        this.durabilidad = durabilidad;
+    @Override
+    public String toString() {
+        return super.toString() + " \nEscudo{defensaExtra=" + defensaExtra + "}";
     }
 
     @Override
-    public String toString() {
-        return "Escudo{nombre=" + nombre + ", defensaExtra=" + defensaExtra + ", durabilidad=" + durabilidad + "}";
+    public String ejecutar() {
+        return "El escudo " + getNombre() + " bloquea el golpe entrante y reduce el daño recibido.";
+    }
+
+    @Override
+    public int calcularValorCombate() {
+        return defensaExtra + getDurabilidad() / 10;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Equipo defensivo";
     }
 }

@@ -39,6 +39,19 @@ public class Protagonista extends Personaje{
     public String toString() {
         return super.toString()+ " \nProtagonista{" + "Experiencia=" + Experiencia + ", Inventario=" + Inventario + '}';
     }
-    
-    
+
+    @Override
+    public String realizarAccion() {
+        return "El protagonista " + getNombre() + " explora el entorno y gana experiencia.";
+    }
+
+    @Override
+    public int calcularPoderAtaque() {
+        return getDaño() + (Experiencia / 10);
+    }
+
+    @Override
+    public String obtenerEstado() {
+        return "Nivel " + getNivel() + ", Experiencia: " + Experiencia + (isEstaVivo() ? " - Activo" : " - Derrotado");
+    }
 }

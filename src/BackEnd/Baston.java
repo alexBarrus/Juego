@@ -4,33 +4,14 @@
 package BackEnd;
 
 public class Baston extends Armas{
-    private String nombre;
-    private int dañoMagico;
     private int bonusMana;
 
     public Baston() {
     }
 
-    public Baston(String nombre, int dañoMagico, int bonusMana) {
-        this.nombre = nombre;
-        this.dañoMagico = dañoMagico;
+    public Baston(String nombre, int daño, int durabilidad, int bonusMana) {
+        super(nombre, daño, durabilidad);
         this.bonusMana = bonusMana;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getDañoMagico() {
-        return dañoMagico;
-    }
-
-    public void setDañoMagico(int dañoMagico) {
-        this.dañoMagico = dañoMagico;
     }
 
     public int getBonusMana() {
@@ -43,6 +24,21 @@ public class Baston extends Armas{
 
     @Override
     public String toString() {
-        return "Baston{nombre=" + nombre + ", dañoMagico=" + dañoMagico + ", bonusMana=" + bonusMana + "}";
+        return super.toString() + " \nBaston{bonusMana=" + bonusMana + "}";
+    }
+
+    @Override
+    public String ejecutar() {
+        return "El bastón " + getNombre() + " canaliza energía mágica y libera " + getDaño() + " de daño mágico.";
+    }
+
+    @Override
+    public int calcularValorCombate() {
+        return getDaño() + bonusMana / 5;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Arma mágica";
     }
 }

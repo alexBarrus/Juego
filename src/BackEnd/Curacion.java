@@ -26,4 +26,19 @@ public class Curacion extends Habilidad {
     public String toString() {
         return super.toString() + " \nCuracion{puntosRestaurados=" + puntosRestaurados + "}";
     }
+
+    @Override
+    public String ejecutar() {
+        return "La habilidad " + getNombre() + " restaura " + puntosRestaurados + " puntos de vida.";
+    }
+
+    @Override
+    public int calcularEfecto() {
+        return getPoder() + puntosRestaurados;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Soporte - Sanación";
+    }
 }

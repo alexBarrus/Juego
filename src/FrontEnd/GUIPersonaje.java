@@ -3,13 +3,16 @@
 */
 package FrontEnd;
 
+import BackEnd.Personaje;
 import BackEnd.Enemigo;
 import BackEnd.Jefe;
 import BackEnd.Protagonista;
+import BackEnd.Armas;
 import BackEnd.Arco;
 import BackEnd.Baston;
 import BackEnd.Escudo;
 import BackEnd.Espada;
+import BackEnd.Habilidad;
 import BackEnd.Ataque;
 import BackEnd.Buffo;
 import BackEnd.Curacion;
@@ -71,6 +74,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarEnemigo = new javax.swing.JButton();
         BtnBorrarEnemigo = new javax.swing.JButton();
         BtnDestruirEnemigo = new javax.swing.JButton();
+        BtnPolimorfismoEnemigo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -101,6 +105,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarProtagonista = new javax.swing.JButton();
         BtnBorrarProtagonista = new javax.swing.JButton();
         BtnDestruirProtagonista = new javax.swing.JButton();
+        BtnPolimorfismoProtagonista = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
@@ -131,6 +136,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarJefe = new javax.swing.JButton();
         BtnBorrarJefe = new javax.swing.JButton();
         BtnDestruirJefe = new javax.swing.JButton();
+        BtnPolimorfismoJefe = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
 
@@ -217,14 +223,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirEnemigoActionPerformed(evt);
             }
         });
+        BtnPolimorfismoEnemigo.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoEnemigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoEnemigoActionPerformed(evt);
+            }
+        });
 
-        jPanel5.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel5.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel5.add(BtnCrearEnemigo);
         jPanel5.add(BtnBuscarEnemigo);
         jPanel5.add(BtnMostrarEnemigo);
         jPanel5.add(BtnActualizarEnemigo);
         jPanel5.add(BtnBorrarEnemigo);
         jPanel5.add(BtnDestruirEnemigo);
+        jPanel5.add(BtnPolimorfismoEnemigo);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(6);
@@ -332,14 +345,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirProtagonistaActionPerformed(evt);
             }
         });
+        BtnPolimorfismoProtagonista.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoProtagonista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoProtagonistaActionPerformed(evt);
+            }
+        });
 
-        jPanel7.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel7.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel7.add(BtnCrearProtagonista);
         jPanel7.add(BtnBuscarProtagonista);
         jPanel7.add(BtnMostrarProtagonista);
         jPanel7.add(BtnActualizarProtagonista);
         jPanel7.add(BtnBorrarProtagonista);
         jPanel7.add(BtnDestruirProtagonista);
+        jPanel7.add(BtnPolimorfismoProtagonista);
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(6);
@@ -447,14 +467,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirJefeActionPerformed(evt);
             }
         });
+        BtnPolimorfismoJefe.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoJefe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoJefeActionPerformed(evt);
+            }
+        });
 
-        jPanel9.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel9.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel9.add(BtnCrearJefe);
         jPanel9.add(BtnBuscarJefe);
         jPanel9.add(BtnMostrarJefe);
         jPanel9.add(BtnActualizarJefe);
         jPanel9.add(BtnBorrarJefe);
         jPanel9.add(BtnDestruirJefe);
+        jPanel9.add(BtnPolimorfismoJefe);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(6);
@@ -491,6 +518,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
         jTextField23 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jTextField46 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         BtnCrearArco = new javax.swing.JButton();
         BtnBuscarArco = new javax.swing.JButton();
@@ -498,21 +527,26 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarArco = new javax.swing.JButton();
         BtnBorrarArco = new javax.swing.JButton();
         BtnDestruirArco = new javax.swing.JButton();
+        BtnPolimorfismoArco = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
 
         jTextField22.setName("TXTNombreArco");
         jTextField23.setName("TXTDanoArco");
         jTextField24.setName("TXTAlcanceArco");
+        jTextField46.setName("TXTDurabilidadArco");
         jLabel28.setText("Nombre (atributo primario):");
         jLabel29.setText("Daño:");
         jLabel30.setText("Alcance:");
+        jLabel52.setText("Durabilidad:");
 
         jPanel11.setLayout(new java.awt.GridLayout(0, 2, 8, 8));
         jPanel11.add(jLabel28);
         jPanel11.add(jTextField22);
         jPanel11.add(jLabel29);
         jPanel11.add(jTextField23);
+        jPanel11.add(jLabel52);
+        jPanel11.add(jTextField46);
         jPanel11.add(jLabel30);
         jPanel11.add(jTextField24);
 
@@ -552,14 +586,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirArcoActionPerformed(evt);
             }
         });
+        BtnPolimorfismoArco.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoArco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoArcoActionPerformed(evt);
+            }
+        });
 
-        jPanel12.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel12.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel12.add(BtnCrearArco);
         jPanel12.add(BtnBuscarArco);
         jPanel12.add(BtnMostrarArco);
         jPanel12.add(BtnActualizarArco);
         jPanel12.add(BtnBorrarArco);
         jPanel12.add(BtnDestruirArco);
+        jPanel12.add(BtnPolimorfismoArco);
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(6);
@@ -595,6 +636,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
         jTextField26 = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         jTextField27 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jTextField47 = new javax.swing.JTextField();
         jPanel15 = new javax.swing.JPanel();
         BtnCrearBaston = new javax.swing.JButton();
         BtnBuscarBaston = new javax.swing.JButton();
@@ -602,21 +645,26 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarBaston = new javax.swing.JButton();
         BtnBorrarBaston = new javax.swing.JButton();
         BtnDestruirBaston = new javax.swing.JButton();
+        BtnPolimorfismoBaston = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
 
         jTextField25.setName("TXTNombreBaston");
         jTextField26.setName("TXTDanoMagicoBaston");
         jTextField27.setName("TXTBonusManaBaston");
+        jTextField47.setName("TXTDurabilidadBaston");
         jLabel31.setText("Nombre (atributo primario):");
         jLabel32.setText("Daño mágico:");
         jLabel33.setText("Bonus de maná:");
+        jLabel53.setText("Durabilidad:");
 
         jPanel14.setLayout(new java.awt.GridLayout(0, 2, 8, 8));
         jPanel14.add(jLabel31);
         jPanel14.add(jTextField25);
         jPanel14.add(jLabel32);
         jPanel14.add(jTextField26);
+        jPanel14.add(jLabel53);
+        jPanel14.add(jTextField47);
         jPanel14.add(jLabel33);
         jPanel14.add(jTextField27);
 
@@ -656,14 +704,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirBastonActionPerformed(evt);
             }
         });
+        BtnPolimorfismoBaston.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoBaston.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoBastonActionPerformed(evt);
+            }
+        });
 
-        jPanel15.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel15.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel15.add(BtnCrearBaston);
         jPanel15.add(BtnBuscarBaston);
         jPanel15.add(BtnMostrarBaston);
         jPanel15.add(BtnActualizarBaston);
         jPanel15.add(BtnBorrarBaston);
         jPanel15.add(BtnDestruirBaston);
+        jPanel15.add(BtnPolimorfismoBaston);
 
         jTextArea5.setColumns(20);
         jTextArea5.setRows(6);
@@ -706,6 +761,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarEscudo = new javax.swing.JButton();
         BtnBorrarEscudo = new javax.swing.JButton();
         BtnDestruirEscudo = new javax.swing.JButton();
+        BtnPolimorfismoEscudo = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
 
@@ -760,14 +816,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirEscudoActionPerformed(evt);
             }
         });
+        BtnPolimorfismoEscudo.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoEscudo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoEscudoActionPerformed(evt);
+            }
+        });
 
-        jPanel18.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel18.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel18.add(BtnCrearEscudo);
         jPanel18.add(BtnBuscarEscudo);
         jPanel18.add(BtnMostrarEscudo);
         jPanel18.add(BtnActualizarEscudo);
         jPanel18.add(BtnBorrarEscudo);
         jPanel18.add(BtnDestruirEscudo);
+        jPanel18.add(BtnPolimorfismoEscudo);
 
         jTextArea6.setColumns(20);
         jTextArea6.setRows(6);
@@ -803,6 +866,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
         jTextField32 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jTextField33 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jTextField48 = new javax.swing.JTextField();
         jPanel21 = new javax.swing.JPanel();
         BtnCrearEspada = new javax.swing.JButton();
         BtnBuscarEspada = new javax.swing.JButton();
@@ -810,21 +875,26 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarEspada = new javax.swing.JButton();
         BtnBorrarEspada = new javax.swing.JButton();
         BtnDestruirEspada = new javax.swing.JButton();
+        BtnPolimorfismoEspada = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea7 = new javax.swing.JTextArea();
 
         jTextField31.setName("TXTNombreEspada");
         jTextField32.setName("TXTDanoEspada");
         jTextField33.setName("TXTFiloEspada");
+        jTextField48.setName("TXTDurabilidadEspada");
         jLabel37.setText("Nombre (atributo primario):");
         jLabel38.setText("Daño:");
         jLabel39.setText("Filo:");
+        jLabel54.setText("Durabilidad:");
 
         jPanel20.setLayout(new java.awt.GridLayout(0, 2, 8, 8));
         jPanel20.add(jLabel37);
         jPanel20.add(jTextField31);
         jPanel20.add(jLabel38);
         jPanel20.add(jTextField32);
+        jPanel20.add(jLabel54);
+        jPanel20.add(jTextField48);
         jPanel20.add(jLabel39);
         jPanel20.add(jTextField33);
 
@@ -864,14 +934,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirEspadaActionPerformed(evt);
             }
         });
+        BtnPolimorfismoEspada.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoEspada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoEspadaActionPerformed(evt);
+            }
+        });
 
-        jPanel21.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel21.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel21.add(BtnCrearEspada);
         jPanel21.add(BtnBuscarEspada);
         jPanel21.add(BtnMostrarEspada);
         jPanel21.add(BtnActualizarEspada);
         jPanel21.add(BtnBorrarEspada);
         jPanel21.add(BtnDestruirEspada);
+        jPanel21.add(BtnPolimorfismoEspada);
 
         jTextArea7.setColumns(20);
         jTextArea7.setRows(6);
@@ -916,6 +993,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarAtaque = new javax.swing.JButton();
         BtnBorrarAtaque = new javax.swing.JButton();
         BtnDestruirAtaque = new javax.swing.JButton();
+        BtnPolimorfismoAtaque = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextArea8 = new javax.swing.JTextArea();
 
@@ -974,14 +1052,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirAtaqueActionPerformed(evt);
             }
         });
+        BtnPolimorfismoAtaque.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoAtaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoAtaqueActionPerformed(evt);
+            }
+        });
 
-        jPanel24.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel24.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel24.add(BtnCrearAtaque);
         jPanel24.add(BtnBuscarAtaque);
         jPanel24.add(BtnMostrarAtaque);
         jPanel24.add(BtnActualizarAtaque);
         jPanel24.add(BtnBorrarAtaque);
         jPanel24.add(BtnDestruirAtaque);
+        jPanel24.add(BtnPolimorfismoAtaque);
 
         jTextArea8.setColumns(20);
         jTextArea8.setRows(6);
@@ -1026,6 +1111,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarBuffo = new javax.swing.JButton();
         BtnBorrarBuffo = new javax.swing.JButton();
         BtnDestruirBuffo = new javax.swing.JButton();
+        BtnPolimorfismoBuffo = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextArea9 = new javax.swing.JTextArea();
 
@@ -1084,14 +1170,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirBuffoActionPerformed(evt);
             }
         });
+        BtnPolimorfismoBuffo.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoBuffo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoBuffoActionPerformed(evt);
+            }
+        });
 
-        jPanel27.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel27.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel27.add(BtnCrearBuffo);
         jPanel27.add(BtnBuscarBuffo);
         jPanel27.add(BtnMostrarBuffo);
         jPanel27.add(BtnActualizarBuffo);
         jPanel27.add(BtnBorrarBuffo);
         jPanel27.add(BtnDestruirBuffo);
+        jPanel27.add(BtnPolimorfismoBuffo);
 
         jTextArea9.setColumns(20);
         jTextArea9.setRows(6);
@@ -1136,6 +1229,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         BtnActualizarCuracion = new javax.swing.JButton();
         BtnBorrarCuracion = new javax.swing.JButton();
         BtnDestruirCuracion = new javax.swing.JButton();
+        BtnPolimorfismoCuracion = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTextArea10 = new javax.swing.JTextArea();
 
@@ -1194,14 +1288,21 @@ public class GUIPersonaje extends javax.swing.JFrame {
                 BtnDestruirCuracionActionPerformed(evt);
             }
         });
+        BtnPolimorfismoCuracion.setText("Demostrar Polimorfismo");
+        BtnPolimorfismoCuracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPolimorfismoCuracionActionPerformed(evt);
+            }
+        });
 
-        jPanel30.setLayout(new java.awt.GridLayout(2, 3, 6, 6));
+        jPanel30.setLayout(new java.awt.GridLayout(0, 4, 6, 6));
         jPanel30.add(BtnCrearCuracion);
         jPanel30.add(BtnBuscarCuracion);
         jPanel30.add(BtnMostrarCuracion);
         jPanel30.add(BtnActualizarCuracion);
         jPanel30.add(BtnBorrarCuracion);
         jPanel30.add(BtnDestruirCuracion);
+        jPanel30.add(BtnPolimorfismoCuracion);
 
         jTextArea10.setColumns(20);
         jTextArea10.setRows(6);
@@ -1367,6 +1468,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirEnemigoActionPerformed
 
+    private void BtnPolimorfismoEnemigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoEnemigoActionPerformed
+        if (enemigoActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Enemigo para demostrar el polimorfismo.");
+            return;
+        }
+        Personaje ref = enemigoActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Personaje\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.realizarAccion() -> ").append(ref.realizarAccion()).append("\n");
+        sb.append("ref.calcularPoderAtaque() -> ").append(ref.calcularPoderAtaque()).append("\n");
+        sb.append("ref.obtenerEstado() -> ").append(ref.obtenerEstado());
+        jTextArea1.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoEnemigoActionPerformed
+
     private void limpiarCamposEnemigo() {
         jTextField1.setText("");
         jTextField2.setText("");
@@ -1501,6 +1619,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "El objeto Protagonista ha sido destruido.");
         }
     }//GEN-LAST:event_BtnDestruirProtagonistaActionPerformed
+
+    private void BtnPolimorfismoProtagonistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoProtagonistaActionPerformed
+        if (protagonistaActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Protagonista para demostrar el polimorfismo.");
+            return;
+        }
+        Personaje ref = protagonistaActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Personaje\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.realizarAccion() -> ").append(ref.realizarAccion()).append("\n");
+        sb.append("ref.calcularPoderAtaque() -> ").append(ref.calcularPoderAtaque()).append("\n");
+        sb.append("ref.obtenerEstado() -> ").append(ref.obtenerEstado());
+        jTextArea2.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoProtagonistaActionPerformed
 
     private void limpiarCamposProtagonista() {
         jTextField8.setText("");
@@ -1651,6 +1786,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirJefeActionPerformed
 
+    private void BtnPolimorfismoJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoJefeActionPerformed
+        if (jefeActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Jefe para demostrar el polimorfismo.");
+            return;
+        }
+        Personaje ref = jefeActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Personaje\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.realizarAccion() -> ").append(ref.realizarAccion()).append("\n");
+        sb.append("ref.calcularPoderAtaque() -> ").append(ref.calcularPoderAtaque()).append("\n");
+        sb.append("ref.obtenerEstado() -> ").append(ref.obtenerEstado());
+        jTextArea3.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoJefeActionPerformed
+
     private void limpiarCamposJefe() {
         jTextField15.setText("");
         jTextField16.setText("");
@@ -1672,7 +1824,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField22.getText());
             int v1 = validarEntero(jTextField23.getText(), "Daño", 0, 100000);
             float v2 = (float) validarDecimal(jTextField24.getText(), "Alcance", 0, 1000);
-            arcoActual = new Arco(nombre, v1, v2);
+            int durabilidad = validarEntero(jTextField46.getText(), "Durabilidad", 0, 1000);
+            arcoActual = new Arco(nombre, v1, durabilidad, v2);
             jTextArea4.setText(arcoActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Arco creado correctamente.");
         } catch (IllegalArgumentException ex) {
@@ -1715,8 +1868,10 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField22.getText());
             int v1 = validarEntero(jTextField23.getText(), "Daño", 0, 100000);
             float v2 = (float) validarDecimal(jTextField24.getText(), "Alcance", 0, 1000);
+            int durabilidad = validarEntero(jTextField46.getText(), "Durabilidad", 0, 1000);
             arcoActual.setNombre(nombre);
             arcoActual.setDaño(v1);
+            arcoActual.setDurabilidad(durabilidad);
             arcoActual.setAlcance(v2);
             jTextArea4.setText(arcoActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Arco actualizado correctamente.");
@@ -1734,6 +1889,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         if (confirmacion == javax.swing.JOptionPane.YES_OPTION) {
             arcoActual.setNombre("");
             arcoActual.setDaño(0);
+            arcoActual.setDurabilidad(0);
             arcoActual.setAlcance(0f);
             limpiarCamposArco();
             jTextArea4.setText(arcoActual.toString());
@@ -1755,10 +1911,28 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirArcoActionPerformed
 
+    private void BtnPolimorfismoArcoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoArcoActionPerformed
+        if (arcoActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Arco para demostrar el polimorfismo.");
+            return;
+        }
+        Armas ref = arcoActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Armas\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularValorCombate() -> ").append(ref.calcularValorCombate()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea4.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoArcoActionPerformed
+
     private void limpiarCamposArco() {
         jTextField22.setText("");
         jTextField23.setText("");
         jTextField24.setText("");
+        jTextField46.setText("");
     }
 
     private void BtnCrearBastonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearBastonActionPerformed
@@ -1770,7 +1944,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField25.getText());
             int v1 = validarEntero(jTextField26.getText(), "Daño mágico", 0, 100000);
             int v2 = validarEntero(jTextField27.getText(), "Bonus de maná", 0, 100000);
-            bastonActual = new Baston(nombre, v1, v2);
+            int durabilidad = validarEntero(jTextField47.getText(), "Durabilidad", 0, 1000);
+            bastonActual = new Baston(nombre, v1, durabilidad, v2);
             jTextArea5.setText(bastonActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Baston creado correctamente.");
         } catch (IllegalArgumentException ex) {
@@ -1813,8 +1988,10 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField25.getText());
             int v1 = validarEntero(jTextField26.getText(), "Daño mágico", 0, 100000);
             int v2 = validarEntero(jTextField27.getText(), "Bonus de maná", 0, 100000);
+            int durabilidad = validarEntero(jTextField47.getText(), "Durabilidad", 0, 1000);
             bastonActual.setNombre(nombre);
-            bastonActual.setDañoMagico(v1);
+            bastonActual.setDaño(v1);
+            bastonActual.setDurabilidad(durabilidad);
             bastonActual.setBonusMana(v2);
             jTextArea5.setText(bastonActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Baston actualizado correctamente.");
@@ -1831,7 +2008,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
         int confirmacion = javax.swing.JOptionPane.showConfirmDialog(this, "¿Borrar los datos de este/a Baston?", "Confirmar", javax.swing.JOptionPane.YES_NO_OPTION);
         if (confirmacion == javax.swing.JOptionPane.YES_OPTION) {
             bastonActual.setNombre("");
-            bastonActual.setDañoMagico(0);
+            bastonActual.setDaño(0);
+            bastonActual.setDurabilidad(0);
             bastonActual.setBonusMana(0);
             limpiarCamposBaston();
             jTextArea5.setText(bastonActual.toString());
@@ -1853,10 +2031,28 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirBastonActionPerformed
 
+    private void BtnPolimorfismoBastonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoBastonActionPerformed
+        if (bastonActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Baston para demostrar el polimorfismo.");
+            return;
+        }
+        Armas ref = bastonActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Armas\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularValorCombate() -> ").append(ref.calcularValorCombate()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea5.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoBastonActionPerformed
+
     private void limpiarCamposBaston() {
         jTextField25.setText("");
         jTextField26.setText("");
         jTextField27.setText("");
+        jTextField47.setText("");
     }
 
     private void BtnCrearEscudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearEscudoActionPerformed
@@ -1951,6 +2147,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirEscudoActionPerformed
 
+    private void BtnPolimorfismoEscudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoEscudoActionPerformed
+        if (escudoActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Escudo para demostrar el polimorfismo.");
+            return;
+        }
+        Armas ref = escudoActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Armas\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularValorCombate() -> ").append(ref.calcularValorCombate()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea6.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoEscudoActionPerformed
+
     private void limpiarCamposEscudo() {
         jTextField28.setText("");
         jTextField29.setText("");
@@ -1966,7 +2179,8 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField31.getText());
             int v1 = validarEntero(jTextField32.getText(), "Daño", 0, 100000);
             float v2 = (float) validarDecimal(jTextField33.getText(), "Filo", 0, 100);
-            espadaActual = new Espada(nombre, v1, v2);
+            int durabilidad = validarEntero(jTextField48.getText(), "Durabilidad", 0, 1000);
+            espadaActual = new Espada(nombre, v1, durabilidad, v2);
             jTextArea7.setText(espadaActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Espada creado correctamente.");
         } catch (IllegalArgumentException ex) {
@@ -2009,8 +2223,10 @@ public class GUIPersonaje extends javax.swing.JFrame {
             String nombre = validarNombre(jTextField31.getText());
             int v1 = validarEntero(jTextField32.getText(), "Daño", 0, 100000);
             float v2 = (float) validarDecimal(jTextField33.getText(), "Filo", 0, 100);
+            int durabilidad = validarEntero(jTextField48.getText(), "Durabilidad", 0, 1000);
             espadaActual.setNombre(nombre);
             espadaActual.setDaño(v1);
+            espadaActual.setDurabilidad(durabilidad);
             espadaActual.setFilo(v2);
             jTextArea7.setText(espadaActual.toString());
             javax.swing.JOptionPane.showMessageDialog(this, "Espada actualizado correctamente.");
@@ -2028,6 +2244,7 @@ public class GUIPersonaje extends javax.swing.JFrame {
         if (confirmacion == javax.swing.JOptionPane.YES_OPTION) {
             espadaActual.setNombre("");
             espadaActual.setDaño(0);
+            espadaActual.setDurabilidad(0);
             espadaActual.setFilo(0f);
             limpiarCamposEspada();
             jTextArea7.setText(espadaActual.toString());
@@ -2049,10 +2266,28 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirEspadaActionPerformed
 
+    private void BtnPolimorfismoEspadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoEspadaActionPerformed
+        if (espadaActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Espada para demostrar el polimorfismo.");
+            return;
+        }
+        Armas ref = espadaActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Armas\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularValorCombate() -> ").append(ref.calcularValorCombate()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea7.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoEspadaActionPerformed
+
     private void limpiarCamposEspada() {
         jTextField31.setText("");
         jTextField32.setText("");
         jTextField33.setText("");
+        jTextField48.setText("");
     }
 
     private void BtnCrearAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearAtaqueActionPerformed
@@ -2150,6 +2385,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "El objeto Ataque ha sido destruido.");
         }
     }//GEN-LAST:event_BtnDestruirAtaqueActionPerformed
+
+    private void BtnPolimorfismoAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoAtaqueActionPerformed
+        if (ataqueActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Ataque para demostrar el polimorfismo.");
+            return;
+        }
+        Habilidad ref = ataqueActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Habilidad\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularEfecto() -> ").append(ref.calcularEfecto()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea8.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoAtaqueActionPerformed
 
     private void limpiarCamposAtaque() {
         jTextField34.setText("");
@@ -2254,6 +2506,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDestruirBuffoActionPerformed
 
+    private void BtnPolimorfismoBuffoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoBuffoActionPerformed
+        if (buffoActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Buffo para demostrar el polimorfismo.");
+            return;
+        }
+        Habilidad ref = buffoActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Habilidad\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularEfecto() -> ").append(ref.calcularEfecto()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea9.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoBuffoActionPerformed
+
     private void limpiarCamposBuffo() {
         jTextField38.setText("");
         jTextField39.setText("");
@@ -2356,6 +2625,23 @@ public class GUIPersonaje extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "El objeto Curacion ha sido destruido.");
         }
     }//GEN-LAST:event_BtnDestruirCuracionActionPerformed
+
+    private void BtnPolimorfismoCuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPolimorfismoCuracionActionPerformed
+        if (curacionActual == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe un objeto Curacion para demostrar el polimorfismo.");
+            return;
+        }
+        Habilidad ref = curacionActual;
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Demostración de Polimorfismo]\n");
+        sb.append("Tipo de referencia declarado: Habilidad\n");
+        sb.append("Tipo real del objeto en memoria: ").append(ref.getClass().getSimpleName()).append("\n");
+        sb.append("ref.toString() -> ").append(ref.toString()).append("\n");
+        sb.append("ref.ejecutar() -> ").append(ref.ejecutar()).append("\n");
+        sb.append("ref.calcularEfecto() -> ").append(ref.calcularEfecto()).append("\n");
+        sb.append("ref.obtenerCategoria() -> ").append(ref.obtenerCategoria());
+        jTextArea10.setText(sb.toString());
+    }//GEN-LAST:event_BtnPolimorfismoCuracionActionPerformed
 
     private void limpiarCamposCuracion() {
         jTextField42.setText("");
@@ -2500,6 +2786,16 @@ public class GUIPersonaje extends javax.swing.JFrame {
     private javax.swing.JButton BtnMostrarEspada;
     private javax.swing.JButton BtnMostrarJefe;
     private javax.swing.JButton BtnMostrarProtagonista;
+    private javax.swing.JButton BtnPolimorfismoArco;
+    private javax.swing.JButton BtnPolimorfismoAtaque;
+    private javax.swing.JButton BtnPolimorfismoBaston;
+    private javax.swing.JButton BtnPolimorfismoBuffo;
+    private javax.swing.JButton BtnPolimorfismoCuracion;
+    private javax.swing.JButton BtnPolimorfismoEnemigo;
+    private javax.swing.JButton BtnPolimorfismoEscudo;
+    private javax.swing.JButton BtnPolimorfismoEspada;
+    private javax.swing.JButton BtnPolimorfismoJefe;
+    private javax.swing.JButton BtnPolimorfismoProtagonista;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -2553,6 +2849,9 @@ public class GUIPersonaje extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2648,6 +2947,9 @@ public class GUIPersonaje extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField44;
     private javax.swing.JTextField jTextField45;
+    private javax.swing.JTextField jTextField46;
+    private javax.swing.JTextField jTextField47;
+    private javax.swing.JTextField jTextField48;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;

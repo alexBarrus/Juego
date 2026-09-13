@@ -26,4 +26,19 @@ public class Buffo extends Habilidad {
     public String toString() {
         return super.toString() + " \nBuffo{duracionTurnos=" + duracionTurnos + "}";
     }
+
+    @Override
+    public String ejecutar() {
+        return "La habilidad " + getNombre() + " aumenta las estadísticas durante " + duracionTurnos + " turnos.";
+    }
+
+    @Override
+    public int calcularEfecto() {
+        return getPoder() * duracionTurnos;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Soporte - Mejora";
+    }
 }

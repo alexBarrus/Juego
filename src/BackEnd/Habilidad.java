@@ -73,4 +73,14 @@ public abstract class Habilidad {
     public String toString() {
         return "Habilidad{" + "Nombre=" + Nombre + ", Costo=" + Costo + ", Poder=" + Poder + '}';
     }
+
+    public abstract String ejecutar();
+
+    public int calcularEfecto() {
+        return Poder;
+    }
+
+    public String obtenerCategoria() {
+        return "Genérica";
+    }
 }

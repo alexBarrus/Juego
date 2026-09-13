@@ -74,4 +74,14 @@ public abstract class Armas {
     public String toString() {
         return "Arma{" + "Nombre=" + Nombre + ", Da\u00f1o=" + Daño + ", Durabilidad=" + Durabilidad + '}';
     }
+
+    public abstract String ejecutar();
+
+    public int calcularValorCombate() {
+        return Daño;
+    }
+
+    public String obtenerCategoria() {
+        return "Arma genérica";
+    }
 }

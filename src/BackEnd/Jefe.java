@@ -36,7 +36,19 @@ public final class Jefe extends Personaje{
     public String toString() {
         return super.toString()+ " \nJefe{" + "Fases=" + Fases + ", multiplicadorFuria=" + multiplicadorFuria + '}';
     }
-    
-    
-    
+
+    @Override
+    public String realizarAccion() {
+        return "El jefe " + getNombre() + " desata su furia en la fase " + Fases + ".";
+    }
+
+    @Override
+    public int calcularPoderAtaque() {
+        return (int) (getDaño() * multiplicadorFuria);
+    }
+
+    @Override
+    public String obtenerEstado() {
+        return "Fase actual: " + Fases + ", Multiplicador de furia: x" + multiplicadorFuria + (isEstaVivo() ? " - En combate" : " - Derrotado");
+    }
 }
